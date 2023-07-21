@@ -1,0 +1,19 @@
+<config>
+	<mappings>
+		<mapping connection="Stall test 1 Pushed">
+			<iocp serial="0" port="1"/>
+		</mapping>
+		<mapping connection="Stall test 2 Pushed">
+			<iocp serial="0" port="2"/>
+		</mapping>
+		<mapping connection="Stick shaker">
+			<iocp serial="0" port="3"/>
+		</mapping>
+		<mapping connection="Stick shaker F/O">
+			<iocp serial="0" port="4"/>
+		</mapping>
+	</mappings>
+
+	<IOCP server="localhost" port="8092" use5DigitsComNav="false"/>
+
+</config>
