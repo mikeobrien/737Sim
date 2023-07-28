@@ -1,1 +1,1 @@
-void teensyMAC(byte* mac);
+bool initEthernet();
