@@ -1,0 +1,498 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>nanoFramework.Json</name>
+    </assembly>
+    <members>
+        <member name="T:nanoFramework.Json.Configuration.Settings">
+            <summary>
+            Common settings for JSON converter.
+            </summary>
+        </member>
+        <member name="P:nanoFramework.Json.Configuration.Settings.Resolver">
+            <summary>
+            Gets or sets resolver which is used to find properties in target object when deserializing JSON.
+            </summary>
+        </member>
+        <member name="P:nanoFramework.Json.Configuration.Settings.CaseSensitive">
+            <summary>
+            Gets or sets a value indicating whether property resolving should be case sensitive.
+            </summary>
+        </member>
+        <member name="P:nanoFramework.Json.Configuration.Settings.ThrowExceptionWhenPropertyNotFound">
+            <summary>
+            Gets or sets a value indicating whether deserialization should throw exception when no property found.
+            </summary>
+        </member>
+        <member name="T:nanoFramework.Json.Configuration.ConvertersMapping">
+            <summary>
+            Contains all converters for JSON.
+            </summary>
+            
+        </member>
+        <member name="M:nanoFramework.Json.Configuration.ConvertersMapping.Add(System.Type,nanoFramework.Json.Converters.IConverter)">
+            <summary>
+            Adds new converter to collection to support more types.
+            </summary>
+            <param name="type">Type of object.</param>
+            <param name="converter">Converter instance which will be used to convert <paramref name="type"/></param>
+        </member>
+        <member name="M:nanoFramework.Json.Configuration.ConvertersMapping.Remove(System.Type)">
+            <summary>
+            Remove existing type converter.
+            </summary>
+            <param name="type">Type of object.</param>
+        </member>
+        <member name="M:nanoFramework.Json.Configuration.ConvertersMapping.Replace(System.Type,nanoFramework.Json.Converters.IConverter)">
+            <summary>
+            Remove and then adds converter for given type.
+            </summary>
+            <param name="type">Type of object.</param>
+            <param name="converter">Converter instance which will be used to convert <paramref name="type"/></param>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.BoolConverter.ToJson(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.BoolConverter.ToType(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.ByteConverter.ToJson(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.ByteConverter.ToType(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.CharConverter.ToJson(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.CharConverter.ToType(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.DateTimeConverter.ToJson(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.DateTimeConverter.ToType(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.DictionaryEntryConverter.ToJson(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.DictionaryEntryConverter.ToType(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.DoubleConverter.ToJson(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.DoubleConverter.ToType(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.FloatConverter.ToJson(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.FloatConverter.ToType(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.GuidConverter.ToJson(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.GuidConverter.ToType(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="T:nanoFramework.Json.Converters.IConverter">
+            <summary>
+            Interface for all JSON converters.
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.IConverter.ToType(System.Object)">
+            <summary>
+            Converts JSON string to object.
+            </summary>
+            <param name="value">JSON value to convert from.</param>
+            <returns>Object converted to type.</returns>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.IConverter.ToJson(System.Object)">
+            <summary>
+            Converts object into JSON string.
+            </summary>
+            <param name="value">Value to convert from.</param>
+            <returns>String with JSON value.</returns>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.IntConverter.ToJson(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.IntConverter.ToType(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.LongConverter.ToJson(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.LongConverter.ToType(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.SByteConverter.ToJson(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.SByteConverter.ToType(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.ShortConverter.ToJson(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.ShortConverter.ToType(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.StringConverter.ToJson(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.StringConverter.ToType(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.TimeSpanConverter.ToJson(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.TimeSpanConverter.ToType(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.TimeSpanConverter.ConvertFromString(System.String)">
+            <summary>
+            Try converting a string value to a <see cref="T:System.TimeSpan"/>.
+            </summary>
+            <param name="value"><see cref="T:System.String"/> to convert.</param>
+            <returns><see langword="true"/> if conversion was successful. <see langword="false"/> otherwise.</returns>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.UIntConverter.ToJson(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.UIntConverter.ToType(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.ULongConverter.ToJson(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.ULongConverter.ToType(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.UShortConverter.ToJson(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Converters.UShortConverter.ToType(System.Object)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="T:nanoFramework.Json.JsonSerializer">
+            <summary>
+            Initializes a new instance of the <see cref="T:nanoFramework.Json.JsonSerializer"/> class.
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.JsonSerializer.SerializeObject(System.Object,System.Boolean)">
+            <summary>
+            Convert an object to a JSON string.
+            </summary>
+            <param name="o">The value to convert. Supported types are: <see cref="T:System.Boolean"/>, <see cref="T:System.String"/>, <see cref="T:System.Byte"/>, <see cref="T:System.UInt16"/>, <see cref="T:System.Int16"/>, <see cref="T:System.UInt32"/>,  <see cref="T:System.Int32"/>, <see cref="T:System.Single"/>, <see cref="T:System.Double"/>, <see cref="T:System.Array"/>, <see cref="T:System.Collections.IDictionary"/>, <see cref="T:System.Collections.IEnumerable"/>, <see cref="T:System.Guid"/>, <see cref="T:System.DateTime"/>, <see cref="T:System.TimeSpan"/>, <see cref="T:System.Collections.DictionaryEntry"/>, <see cref="T:System.Object"/> and <see langword="null"/>.</param>
+            <param name="topObject">Is the object top in hierarchy. Default true.</param>
+            <returns>The JSON object as a string or null when the value type is not supported.</returns>
+            <remarks>For objects, only internal properties with getters are converted.</remarks>
+        </member>
+        <member name="M:nanoFramework.Json.JsonSerializer.SerializeIEnumerable(System.Collections.IEnumerable)">
+            <summary>
+            Convert an IEnumerable to a JSON string.
+            </summary>
+            <param name="enumerable">The value to convert.</param>
+            <returns>The JSON object as a string or null when the value type is not supported.</returns>
+        </member>
+        <member name="M:nanoFramework.Json.JsonSerializer.SerializeIDictionary(System.Collections.IDictionary)">
+            <summary>
+            Convert an IDictionary to a JSON string.
+            </summary>
+            <param name="dictionary">The value to convert.</param>
+            <returns>The JSON object as a string or null when the value type is not supported.</returns>
+        </member>
+        <member name="T:nanoFramework.Json.Resolvers.IMemberResolver">
+            <summary>
+            Interface for property resolvers. 
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Resolvers.IMemberResolver.Get(System.String,System.Type)">
+            <summary>
+            Gets the data about member from object which we want to populate.
+            </summary>
+            <param name="memberName">Key from JSON property. Property name we are looking for.</param>
+            <param name="objectType">Type of object in which <paramref name="memberName"/> should be.</param>
+            <returns>Data about member which we want to populate based on passed parameters.</returns>
+        </member>
+        <member name="T:nanoFramework.Json.Resolvers.SetValueDelegate">
+            <summary>
+            A delegate which will be used for setting value on object.
+            </summary>
+            <param name="objectInstance">Object instance which will be used to set value on.</param>
+            <param name="valueToSet">Value which we want to set.</param>
+        </member>
+        <member name="T:nanoFramework.Json.Resolvers.MemberSet">
+            <summary>
+            Data about member which we want to populate.
+            </summary>
+        </member>
+        <member name="P:nanoFramework.Json.Resolvers.MemberSet.SetValue">
+            <summary>
+            Gets a delegate which tells how to set a value on object.
+            </summary>
+        </member>
+        <member name="P:nanoFramework.Json.Resolvers.MemberSet.ObjectType">
+            <summary>
+            Type of object we are trying to set value on.
+            </summary>
+        </member>
+        <member name="P:nanoFramework.Json.Resolvers.MemberSet.Skip">
+            <summary>
+            Gets a value indicating whether current member should be skipped
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.Resolvers.MemberSet.#ctor(nanoFramework.Json.Resolvers.SetValueDelegate,System.Type)">
+            <summary>
+            Initialize new instance of MemberSet struct.
+            </summary>
+            <param name="setValue">Deletage which tells how to set a value on object.</param>
+            <param name="objectType">Type of object we are trying to set value on.</param>
+        </member>
+        <member name="M:nanoFramework.Json.Resolvers.MemberSet.#ctor(System.Boolean)">
+            <summary>
+            Initialize new instance of MemberSet struct.
+            </summary>
+            <param name="skip">Should skip current method.</param>
+        </member>
+        <member name="T:nanoFramework.Json.SerializationException">
+            <summary>
+            Exception thrown when there is an problem with a serialization operation. 
+            Check the comment from where the exception has been throw to learn the cause.
+            </summary>
+        </member>
+        <member name="T:nanoFramework.Json.DeserializationException">
+            <summary>
+            Exception thrown when there is an problem with a deserialization operation. 
+            Check the comment from where the exception has been throw to learn the cause.
+            </summary>
+        </member>
+        <member name="T:nanoFramework.Json.JsonArray">
+            <summary>
+            Represents array of objects from JSON string.
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.JsonArray.#ctor(nanoFramework.Json.JsonToken[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:nanoFramework.Json.JsonArray" /> class.
+            </summary>
+            <param name="values">Initial <see cref="T:nanoFramework.Json.JsonToken"/> array.</param>
+        </member>
+        <member name="P:nanoFramework.Json.JsonArray.Length">
+            <summary>
+            Gets the lenght of <see cref="P:nanoFramework.Json.JsonArray.Items"/> array.
+            </summary>
+        </member>
+        <member name="P:nanoFramework.Json.JsonArray.Items">
+            <summary>
+            Gets collection of <see cref="T:nanoFramework.Json.JsonToken"/>.
+            </summary>
+        </member>
+        <member name="T:nanoFramework.Json.JsonObject">
+            <summary>
+            Represents single JSON object that contains multiple JSON properties.
+            </summary>
+        </member>
+        <member name="P:nanoFramework.Json.JsonObject.Members">
+            <summary>
+            Gets the collection of values from <see cref="F:nanoFramework.Json.JsonObject._members"/>.
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.JsonObject.Add(System.String,nanoFramework.Json.JsonToken)">
+            <summary>
+            Adds new key value pair to collection.
+            </summary>
+            <param name="name">JSON property key.</param>
+            <param name="value">JSON property value.</param>
+        </member>
+        <member name="M:nanoFramework.Json.JsonObject.Get(System.String)">
+            <summary>
+            Gets the value of property for given key.
+            </summary>
+            <param name="name">JSON property key.</param>
+            <returns>JsonProperty object which contains key and value of object.</returns>
+        </member>
+        <member name="T:nanoFramework.Json.JsonProperty">
+            <summary>
+            Represents single JSON key value pair.
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.JsonProperty.#ctor(System.String,nanoFramework.Json.JsonToken)">
+            <summary>
+            Initializes a new instance of the <see cref="T:nanoFramework.Json.JsonProperty" /> class.
+            </summary>
+            <param name="name">JSON property key.</param>
+            <param name="value">JSON property value.</param>
+        </member>
+        <member name="P:nanoFramework.Json.JsonProperty.Name">
+            <summary>
+            Gets key of JSON property.
+            </summary>
+        </member>
+        <member name="P:nanoFramework.Json.JsonProperty.Value">
+            <summary>
+            Gets value of Json property.
+            </summary>
+        </member>
+        <member name="T:nanoFramework.Json.JsonConvert">
+            <summary>
+            Provides methods for converting between .NET types and JSON types.
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.JsonConvert.SerializeObject(System.Object)">
+            <summary>
+            Convert an object to a JSON string.
+            </summary>
+            <param name="oSource">The value to convert. Supported types are: Boolean, String, Byte, (U)Int16, (U)Int32, Float, Double, Decimal, Array, IDictionary, IEnumerable, Guid, Datetime, DictionaryEntry, Object and null.</param>
+            <returns>The JSON object as a string or null when the value type is not supported.</returns>
+            <remarks>For objects, only public properties with getters are converted.</remarks>
+        </member>
+        <member name="M:nanoFramework.Json.JsonConvert.DeserializeObject(System.String,System.Type)">
+            <summary>
+            Deserializes a Json string into an object.
+            </summary>
+            <param name="sourceString"></param>
+            <param name="type">The object type to convert to</param>
+            <returns></returns>
+        </member>
+        <member name="M:nanoFramework.Json.JsonConvert.DeserializeObject(System.IO.Stream,System.Type)">
+            <summary>
+            Deserializes a Json string into an object.
+            </summary>
+            <param name="stream"></param>
+            <param name="type">The object type to convert to</param>
+            <returns></returns>
+        </member>
+        <member name="M:nanoFramework.Json.JsonConvert.DeserializeObject(System.IO.StreamReader,System.Type)">
+            <summary>
+            Deserializes a Json string into an object.
+            </summary>
+            <param name="dr"></param>
+            <param name="type">The object type to convert to</param>
+            <returns></returns>
+        </member>
+        <member name="T:nanoFramework.Json.JsonToken">
+            <summary>
+            Base class for all Json structures.
+            </summary>
+        </member>
+        <member name="T:nanoFramework.Json.JsonValue">
+            <summary>
+            Represents single object from JSON string.
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.JsonValue.#ctor(System.Object,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:nanoFramework.Json.JsonValue" /> class.
+            </summary>
+            <param name="value">Value of current JSON object.</param>
+            <param name="isDateTime">Is the type of value DateTime.</param>
+        </member>
+        <member name="P:nanoFramework.Json.JsonValue.Value">
+            <summary>
+            Gets or sets object value.
+            </summary>
+        </member>
+        <member name="M:nanoFramework.Json.DateTimeExtensions.FromiCalendar(System.String)">
+            <summary>
+            Converts a vCal or iCal date string into a DateTime object.
+            </summary>
+            <param name="iCalendar"></param>
+            <returns></returns>
+        </member>
+        <member name="M:nanoFramework.Json.DateTimeExtensions.ToIso8601(System.DateTime)">
+            <summary>
+            Converts a DateTime object into an ISO 8601 string.  This version
+            always returns the string in UTC format.
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:nanoFramework.Json.DateTimeExtensions.IsNumeric(System.String)">
+            <summary>
+            Returns true if the given string contains only numeric characters.
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:nanoFramework.Json.DateTimeExtensions.FromASPNetAjax(System.String)">
+            <summary>
+            Converts an ASP.NET Ajaz JSON string to DateTime
+            </summary>
+            <param name="ajax"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

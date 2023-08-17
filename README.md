@@ -1,6 +1,5 @@
 ## 737 Sim
 
-
 ### Stack
 
 - [MS Flight Simulator 2020](https://www.flightsimulator.com)
@@ -15,6 +14,8 @@
 Getting started guide can be found [here](https://wiki.prosim-ar.com/index.php/Getting_Started) and manual [here](https://wiki.prosim-ar.com/index.php/ProSim737_Manual).
 
 ### OpenCockpits SIOC Setup
+
+OpenCockpits SIOC can be downloaded [here](https://www.opencockpits.com/index.php/en/download/category/sioc).
 
 ### ESP32-S3-DevKit Setup
 
@@ -31,7 +32,8 @@ The ESP32-S3-WROOM is a general-purpose Wi-Fi + Bluetooth LE MCU module that int
 The ESP32-S3-DevKit is a development board that incorporates the ESP32-S3-WROOM MCU. The following versions are available:
 
 - [ESP32-S3-DevKitM-1](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/hw-reference/esp32s3/user-guide-devkitm-1.html) 
-- [ESP32-S3-DevKitC-1](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/hw-reference/esp32s3/user-guide-devkitc-1.html) 
+- [ESP32-S3-DevKitC-1 v1.0](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/hw-reference/esp32s3/user-guide-devkitc-1-v1.0.html) 
+- [ESP32-S3-DevKitC-1 v1.1](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/hw-reference/esp32s3/user-guide-devkitc-1.html) 
 
 The following development boards are available:
 
@@ -59,20 +61,20 @@ The following development boards are available:
 
 The nanoFramework will need to be flashed on the board as described [here](https://github.com/nanoframework/nanoFirmwareFlasher).
 
-1) Install [the nanoFirmwareFlasher](https://github.com/nanoframework/nanoFirmwareFlasher):
+1. Install [the nanoFirmwareFlasher](https://github.com/nanoframework/nanoFirmwareFlasher):
 
 ```
 dotnet tool install -g nanoff
 ```
 
-2) Connect the device to the USB port (not USB-to-UART, they are both micro USB connectors).
+2. Connect the device to the USB port (not USB-to-UART, they are both micro USB connectors).
 
-3) Put the device in download mode:
-  1) Press and hold the [BOOT] button down
-  2) Press and Release the [RESET] button
-  3) Release the [BOOT] button
+3. Put the device in download mode:
+    - Press and hold the [BOOT] button down
+    - Press and Release the [RESET] button
+    - Release the [BOOT] button
 
-4) Check which port the device is connected too:
+4. Check which port the device is connected too:
 
 ```
 nanoff --listports
@@ -89,13 +91,13 @@ Available COM ports:
   COM6
 ```
 
-5) Check connectivity as follows (optional, replace the COM port with the one in the previous step):
+5. Check connectivity as follows (optional, replace the COM port with the one in the previous step):
 
 ```
 nanoff --platform esp32 --serialport COM5 --devicedetails
 ```
 
-6) Update the firmware (replace the COM port with the one in the previous step):
+6. Update the firmware (replace the COM port with the one in the previous step):
 
 ```
 nanoff --update --target ESP32_S3 --serialport COM6 -v d
@@ -130,7 +132,7 @@ Erasing flash...OK
 Flashing firmware...OK
 ```
 
-7) Unplug and replug the device and list the ports:
+7. Unplug and replug the device and list the ports:
 
 ```
 nanoff --listports
@@ -152,21 +154,23 @@ The device should be ready to use.
 
 #### Dev Environment
 
-1) Install [Visual Studio 2022 Community Edition](https://visualstudio.microsoft.com/vs/community/).
-2) Install [the nanoFramework Visual Studio extension](https://marketplace.visualstudio.com/items?itemName=nanoframework.nanoframework-vs2022-extension). 
-3) Open the device explorer under `View > Other Windows > Device Explorer`.
-4) Add a new "Blank Application (.NET nanoFramework)".
-5) Install the following nuget packages:
+1. Install [Visual Studio 2022 Community Edition](https://visualstudio.microsoft.com/vs/community/).
+2. Install [the nanoFramework Visual Studio extension](https://marketplace.visualstudio.com/items?itemName=nanoframework.nanoframework-vs2022-extension). 
+3. Open the device explorer under `View > Other Windows > Device Explorer`.
+4. Add a new "Blank Application (.NET nanoFramework)".
+5. Install the following nuget packages:
 
 ```
 Install-Package nanoFramework.CoreLibrary
 Install-Package nanoFramework.Runtime.Events
 Install-Package nanoFramework.System.Device.Gpio
+Install-Package nanoFramework.System.IO.FileSystem
 Install-Package nanoFramework.Hardware.Esp32
 Install-Package nanoFramework.Iot.Device.Ws28xx.Esp32
+Install-Package nanoFramework.Json
 ```
 
-6)S Run the blinky program:
+6. Run the blinky program:
 
 ```
 using System;
@@ -195,3 +199,4 @@ public class Program
     }
 }
 ```
+

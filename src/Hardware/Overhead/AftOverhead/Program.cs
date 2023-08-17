@@ -1,28 +1,30 @@
 using System;
+using System.Device.Gpio;
+using System.Diagnostics;
 using System.Drawing;
 using System.Threading;
 using Iot.Device.Ws28xx.Esp32;
+using Common.Device;
+using Common.Configuration;
 
 namespace AftOverhead
 {
     public class Program
     {
+        private const int ConfigModePin = 1;
+
+        private static readonly RgbLed BuiltInLed = RgbLed.BuiltInEsp32S3DevKit10;
+
         public static void Main()
         {
-            // Built in LED positions on ESP32-S3-DevKitC-1
-            // v1.0: pin 48
-            // v1.1: pin 38
+            var gpioController = new GpioController();
+            var configModeButton = gpioController.OpenPin(ConfigModePin, PinMode.InputPullUp);
+            var config = ConfigurationLoader.Load("737 Sim Aft Overhead Panel", 
+                configModeButton.IsLow(), BuiltInLed);
 
-            var led = new Sk6812(48, 1);
-            var toggle = false;
+            BuiltInLed.Flash(Color.Lime, 1);
 
-            while (true)
-            {
-                led.Image.SetPixel(0, 0, toggle ? Color.Lime : Color.Black);
-                led.Update();
-                toggle = !toggle;
-                Thread.Sleep(500);
-            }
+            Thread.Sleep(Timeout.Infinite);
         }
     }
 }
