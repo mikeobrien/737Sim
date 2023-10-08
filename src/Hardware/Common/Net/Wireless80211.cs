@@ -25,7 +25,7 @@ namespace Common.Net
         }
         
         public static bool Configure(string ssid, string password)
-        {            
+        {
             var success = WifiNetworkHelper.ConnectDhcp(ssid, password, 
                 token: new CancellationTokenSource(10000).Token);
             Debug.WriteLine($"WiFi connection status: {success}");

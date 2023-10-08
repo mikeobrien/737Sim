@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Threading;
 
-namespace Common.Device
+namespace Common.Devices
 {
     public class RgbLed
     {
